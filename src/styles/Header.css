@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    padding: 10px 8px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e5984;
+  }
+  
+  header img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    margin-top: 1px;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .left h1 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #e8f8ff;
+  }
+  
+  .left img {
+    width: 25px;
+    height: 25px;
+    margin-top: 2.5px;
+  }
+  
