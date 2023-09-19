@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import banner from '../assets/banner.png';
 import searchIcon from '../assets/find.svg';
+import '../styles/CharacterList.css';
 
 const CharacterList= () => {
     const [search, setSearch] = useState('');
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        setSearch(e.target.value);
+      };
 
     return (
         <section className="character-container">
@@ -13,7 +19,7 @@ const CharacterList= () => {
             <input
             type="search"
             placeholder="Search Characters"
-            onChange={''}
+            onChange={handleChange}
             value={search}
         />
             </article>
