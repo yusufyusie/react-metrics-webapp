@@ -20,7 +20,10 @@ const CharacterList= () => {
         setSearch(e.target.value);
       };
 
-      const filtered = charactersData.filter((person) => person.name.toLowerCase().includes(search));
+      const filtered = charactersData.filter((actor) => actor.name.toLowerCase().includes(search)
+          .match(search.toLowerCase()) || actor.symbol.toLowerCase()
+          .match(search.toLowerCase()));
+
       if (loading) {
         return (
           <p> characters are loading!</p>
@@ -44,8 +47,8 @@ const CharacterList= () => {
                     value={search} />
             </article>
         </section><section className="character-list">
-                {filtered.map((character) => (
-                    <Link to={`/details/${character.id}`} key={character.id}></Link>
+                {filtered.map((actor) => (
+                    <Link to={`/details/${actor.id}`} key={actor.id}></Link>
                 ))}
             </section></>
      );
