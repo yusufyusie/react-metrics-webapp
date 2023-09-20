@@ -19,8 +19,7 @@ const initialState = {
                     "Content-Type": "application/json;charset=UTF-8",
                 },
             });
-            const result = await response.json();
-             return result.data;
+             return response.data;
             } catch (error) {
                 return thunkAPI.rejectWithValue(error);
               }

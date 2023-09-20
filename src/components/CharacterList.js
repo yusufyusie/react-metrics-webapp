@@ -20,7 +20,7 @@ const CharacterList= () => {
         setSearch(e.target.value);
       };
 
-      const filtered = charactersData.filter((actor) => actor.name.toLowerCase().includes(search)
+      const filtered = charactersData.filter((actor) => actor.fullName.toLowerCase()
           .match(search.toLowerCase()) || actor.symbol.toLowerCase()
           .match(search.toLowerCase()));
 
@@ -46,11 +46,13 @@ const CharacterList= () => {
                     onChange={handleChange}
                     value={search} />
             </article>
-        </section><section className="character-list">
+        </section>
+        <section className="character-list">
                 {filtered.map((actor) => (
                     <Link to={`/details/${actor.id}`} key={actor.id}></Link>
                 ))}
-            </section></>
+            </section>
+            </>
      );
 }
 
