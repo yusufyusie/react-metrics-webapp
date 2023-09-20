@@ -9,7 +9,6 @@ const App = () => (
     <Header />
     <Routes>
     <Route path="/" element={<CharacterList />} />
-    <Footer />
     </Routes>
   </Router>
 );
