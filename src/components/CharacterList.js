@@ -46,7 +46,9 @@ const CharacterList= () => {
         </section>
 
         <section className="character-list">
-            {filtered.map((character) => ())}
+            {filtered.map((character) => (
+                <Link to={`/details/${character.id}`} key={character.id}></Link>
+            ))}
 
         </section>
      );
