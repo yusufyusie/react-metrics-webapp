@@ -7,8 +7,9 @@ const initialState = {
     error: '',
    };
 
-   export const getAllCharacters = createAsyncThunk('characters/fetchCharacters', async () => {
-          const response = await fetch(getCharactersUrl,
+   export const getAllCharacters = createAsyncThunk('characters/fetchCharacters', async (_name, thunkAPI) => {
+    try {
+         const response = await fetch(getCharactersUrl,
             {
                 method: 'GET',
                 headers: {
@@ -17,6 +18,9 @@ const initialState = {
             });
             const result = await response.json();
              return result.characters;
+            } catch (error) {
+                return thunkAPI.rejectWithValue(error);
+              }
    });
 
 const characterSlice = createSlice({
