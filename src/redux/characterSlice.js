@@ -27,7 +27,7 @@ const initialState = {
    });
 
 const characterSlice = createSlice({
-    name: 'characters',
+    name: 'charactersData',
     initialState,
     reducers: { },
     extraReducers: (builder) => {

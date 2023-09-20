@@ -23,7 +23,7 @@ const CharacterList= () => {
       const filtered = charactersData.filter((person) => person.name.toLowerCase().includes(search));
       if (loading) {
         return (
-          <p> Missions are loading!</p>
+          <p> characters are loading!</p>
         );
       }
       if (error) {
