@@ -19,18 +19,34 @@ const CharacterList= () => {
         setSearch(e.target.value);
       };
 
+      const filtered = charactersData.filter((person) => person.name.toLowerCase().includes(search));
+      if (loading) {
+        return (
+          <p> Missions are loading!</p>
+        );
+      }
+      if (error) {
+        return (
+          <p>Something is incorrect!</p>
+        );
+      }
+
     return (
         <section className="character-container">
             <img src={banner} alt="banner" />
             <article className="search-field">
-            <img src={searchIcon} alt="search icon" />
-            <input
-            type="search"
-            placeholder="Search Characters"
-            onChange={handleChange}
-            value={search}
-        />
+                <img src={searchIcon} alt="search icon" />
+                <input
+                type="search"
+                placeholder="Search Characters"
+                onChange={handleChange}
+                value={search}
+                />
             </article>
+        </section>
+
+        <section className="character-list">
+            {filtered.map((character) => ())}
 
         </section>
      );
