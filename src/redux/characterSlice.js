@@ -27,7 +27,20 @@ const characterSlice = createSlice({
     name: 'character',
     initialState,
     reducers: { },
-    extraReducers() {},
+    extraReducers: (builder) => {
+        builder.addCase(getAllCharacters.pending, (state) => {
+            const newState = { ...state, loading: true };
+            return newState;
+        });
+        builder.addCase(getAllCharacters.fulfilled, (state, action) => {
+            const newState = { ...state, charactersData: action.payload, loading: false };
+            return newState;
+        });
+        builder.addCase(getAllCharacters.rejected, (state, action) => {
+           const newState = { ...state, charactersData: [], error: action.error.message };
+            return newState;
+        });
+    },
 });
 
 export default characterSlice.reducer;
