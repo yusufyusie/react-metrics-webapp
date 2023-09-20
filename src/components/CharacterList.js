@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import banner from '../assets/banner.png';
 import searchIcon from '../assets/find.svg';
 import '../styles/CharacterList.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllCharacters } from '../redux/characterSlice'
 
 const CharacterList= () => {
+    const { charactersData, loading, error } = useSelector((store) => store.charactersData);
+    const dispatch = useDispatch();
     const [search, setSearch] = useState('');
+
+    useEffect(() => {
+        dispatch(getAllCharacters());
+      }, [dispatch]);
 
     const handleChange = (e) => {
         e.preventDefault();
