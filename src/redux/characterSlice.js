@@ -1,4 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
+
 const getCharactersUrl = 'https://thronesapi.com/api/v2/Characters';
 
 const initialState = { 
@@ -9,11 +11,12 @@ const initialState = {
 
    export const getAllCharacters = createAsyncThunk('characters/fetchCharacters', async (_name, thunkAPI) => {
     try {
-         const response = await fetch(getCharactersUrl,
+         const response = await axios.get(getCharactersUrl,
             {
                 method: 'GET',
                 headers: {
-                    'content-Type': 'application/json; charset=utf-8',
+                    Accept: "application/json",
+                    "Content-Type": "application/json;charset=UTF-8",
                 },
             });
             const result = await response.json();
