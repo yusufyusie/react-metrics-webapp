@@ -2,13 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = { 
-    loading: false, 
     charactersData: [], 
+    loading: false, 
     error: '' 
    };
 
 const characterSlice = createSlice({
-
-})
+    name: 'character',
+    initialState,
+    reducers: { },
+    extraReducers() {},
+});
 
 export default characterSlice.reducer;
