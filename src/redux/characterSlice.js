@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getCharactersUrl = 'https://thronesapi.com/api/v2/Characters';
+ const getCharactersUrl = 'https://thronesapi.com/api/v2/Characters';
 
 const initialState = { 
     charactersData: [], 

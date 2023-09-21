@@ -24,7 +24,7 @@ const CharacterDetails = () => {
     return (
       <div className="actor-details">
         <div className="hero">
-          <img src={characterDetails.icon} alt="actor-icon" />
+          <img src={characterDetails.image} alt="actor-icon" />
           <h2>{characterDetails.name}</h2>
         </div>
         <div className="details">
