@@ -11,7 +11,7 @@ export const getCharacterDetails = createAsyncThunk('details/characterDetails', 
   const initialState = { loading: false, characterDetails: [], error: '' };  
 
   const characterDetailSlice = createSlice({
-    name: 'details',
+    name: 'characterDetails',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
