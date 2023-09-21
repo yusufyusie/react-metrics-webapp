@@ -54,8 +54,8 @@ const CharacterList= () => {
                   <div className="actorImage">
                     {(actor.imageUrl)
                         ? <img 
-                              width={230}
-                              height={345}
+                              width={228}
+                              height={343}
                               alt="Actor" src={actor.imageUrl} />
                               : <p>no image available</p>}
                   </div>
