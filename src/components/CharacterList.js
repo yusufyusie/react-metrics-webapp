@@ -53,8 +53,11 @@ const CharacterList= () => {
                 <div className="actorCard">
                   <div className="actorImage">
                     {(actor.image)
-                        ? <img alt="Actor" src={actor.image} />
-                        : <p>no image available</p>}
+                        ? <img 
+                              width={230}
+                              height={345}
+                              alt="Actor" src={actor.image} />
+                              : <p>no image available</p>}
                   </div>
                   <div className="actorDesc">
                     <h2>{actor.fullName}</h2>

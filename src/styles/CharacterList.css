@@ -33,5 +33,24 @@
     height: 17px;
   }
   
- 
+  .actorCard {
+    list-style: none;
+    font-size: 1.5rem;
+    text-align: center;
+  }
   
+  .actorCard:hover {
+    opacity: 0.8;
+  }
+  
+  .actorImage {
+    border-radius: 10px;
+    background-color: azure;
+  }
+  
+  @media (max-width: 560px) {
+    .actorImage {
+      width: 90%;
+      height: auto;
+    }
+  }
