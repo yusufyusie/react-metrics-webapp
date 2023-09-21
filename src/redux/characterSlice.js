@@ -35,7 +35,7 @@ const characterSlice = createSlice({
             return newState;
         });
         builder.addCase(getAllCharacters.fulfilled, (state, action) => {
-            const newState = { ...state, charactersData: action.payload.slice(0, 25), loading: false, error: false };
+            const newState = { ...state, charactersData: action.payload, loading: false, error: false };
             return newState;
         });
         builder.addCase(getAllCharacters.rejected, (state, action) => {
