@@ -52,9 +52,9 @@ const CharacterList= () => {
               <Link to={`/details/${actor.id}`} key={actor.id}>
                 <div className="actor-card">
                   <div className="actor-image">
-                  {(actor.image)
-                      ? <img alt="Actor" src={actor.image} />
-                      : <p>no image available</p>}
+                    {(actor.image)
+                        ? <img alt="Actor" src={actor.image} />
+                        : <p>no image available</p>}
                   </div>
                   <div className="actor-desc">
                     <h2>{actor.fullName}</h2>
