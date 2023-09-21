@@ -33,24 +33,52 @@
     height: 17px;
   }
   
+  .character-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    gap: 8px;
+  }
+
   .actorCard {
-    list-style: none;
-    font-size: 1.5rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 180px;
+    background-color: #2e5984;
   }
   
   .actorCard:hover {
     opacity: 0.8;
   }
   
-  .actorImage {
-    border-radius: 10px;
-    background-color: azure;
+  .coin-logo {
+    height: 100px;
   }
   
-  @media (max-width: 560px) {
-    .actorImage {
-      width: 90%;
-      height: auto;
-    }
+  .actorImage img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .actorDesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .actorDesc h2 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 160px;
+    font-size: 1.05rem;
+  }
+  
+  .actorDesc p {
+    font-size: 0.8rem;
   }
