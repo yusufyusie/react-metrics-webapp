@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import banner from '../assets/banner.png';
 import searchIcon from '../assets/find.svg';
-import '../styles/CharacterList.css';
+import style from '../styles/CharacterList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCharacters } from '../redux/characterSlice'
 import { Link } from 'react-router-dom';
@@ -48,8 +48,23 @@ const CharacterList= () => {
             </article>
         </section>
         <section className="character-list">
-                {filtered.map((actor) => (
-                    <Link to={`/details/${actor.id}`} key={actor.id}></Link>
+          {filtered.map((actor) => (
+              <Link to={`/details/${actor.id}`} key={actor.id}>
+                <div className="actor-card">
+                  <div className="actor-image">
+                  {(actor.image)
+                      ? <img alt="Actor" src={actor.image} />
+                      : <p>no image available</p>}
+                  </div>
+                  <div className="actor-desc">
+                    <h2>{actor.fullName}</h2>
+                    <p>
+                    Family:
+                      {actor.family}
+                    </p>
+                  </div>
+               </div>
+              </Link>
                 ))}
             </section>
             </>
