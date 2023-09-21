@@ -50,13 +50,13 @@ const CharacterList= () => {
         <section className="character-list">
           {filtered.map((actor) => (
               <Link to={`/details/${actor.id}`} key={actor.id}>
-                <div className="actor-card">
-                  <div className="actor-image">
+                <div className="actorCard">
+                  <div className="actorImage">
                     {(actor.image)
                         ? <img alt="Actor" src={actor.image} />
                         : <p>no image available</p>}
                   </div>
-                  <div className="actor-desc">
+                  <div className="actorDesc">
                     <h2>{actor.fullName}</h2>
                     <p>
                     Family:
