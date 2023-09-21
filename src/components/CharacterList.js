@@ -1,10 +1,11 @@
 import { React, useEffect, useState } from 'react';
-import banner from '../assets/banner.png';
-import searchIcon from '../assets/find.svg';
-import style from '../styles/CharacterList.css';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCharacters } from '../redux/characterSlice'
 import { Link } from 'react-router-dom';
+import banner from '../assets/banner.png';
+import searchIcon from '../assets/find.svg';
+import '../styles/CharacterList.css';
 
 const CharacterList= () => {
     const { charactersData, loading, error } = useSelector((store) => store.charactersData);
@@ -20,7 +21,7 @@ const CharacterList= () => {
         setSearch(e.target.value);
       };
 
-      const filtered = charactersData.filter((actor) => actor.fullName.toLowerCase()
+      const searchedActor = charactersData.filter((actor) => actor.fullName.toLowerCase()
           .match(search.toLowerCase()) || actor.symbol.toLowerCase()
           .match(search.toLowerCase()));
 
@@ -36,7 +37,7 @@ const CharacterList= () => {
       }
 
     return (
-    <><section className="character-container">
+    <section className="character-container">
             <img src={banner} alt="banner" />
             <article className="search-field">
                 <img src={searchIcon} alt="search icon" />
@@ -44,11 +45,11 @@ const CharacterList= () => {
                     type="search"
                     placeholder="Search Characters"
                     onChange={handleChange}
-                    value={search} />
+                    value={search} 
+                    />
             </article>
-        </section>
-        <section className="character-list">
-          {filtered.map((actor) => (
+        <article className="character-list">
+          {searchedActor.map((actor) => (
               <Link to={`/details/${actor.id}`} key={actor.id}>
                 <div className="actorCard">
                   <div className="actorImage">
@@ -69,9 +70,9 @@ const CharacterList= () => {
                </div>
               </Link>
                 ))}
-            </section>
-            </>
+            </article>           
+        </section>
      );
-}
+};
 
 export default CharacterList;
