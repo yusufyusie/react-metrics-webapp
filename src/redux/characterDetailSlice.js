@@ -1,9 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getCharactersUrl } from './characterSlice'
 import axios from "axios";
 
-export const getCharacterDetails = createAsyncThunk('details/characterDetails', async (id) => {
-    const response = await axios.get(getCharactersUrl/{id});
+export const getCharacter = createAsyncThunk('details/characterDetail', async (id) => {
+    const response = await axios.get(`https://thronesapi.com/api/v2/Characters/${id}`);
     const { actor } = await response.json();
     return actor;
   });
@@ -11,19 +10,21 @@ export const getCharacterDetails = createAsyncThunk('details/characterDetails', 
   const initialState = { loading: false, characterDetails: [], error: '' };  
 
   const characterDetailSlice = createSlice({
-    name: 'characterDetails',
+    name: 'details',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-      builder.addCase(getCharacterDetails.pending, (state) => {
+      builder.addCase(getCharacter.pending, (state) => {
         const newState = { ...state, loading: true };
         return newState;
       });
-      builder.addCase(getCharacterDetails.fulfilled, (state, action) => {
+
+      builder.addCase(getCharacter.fulfilled, (state, action) => {
         const newState = { ...state, characterDetails: action.payload, loading: false };
         return newState;
       });
-      builder.addCase(getCharacterDetails.rejected, (state, action) => {
+      
+      builder.addCase(getCharacter.rejected, (state, action) => {
         const newState = { ...state, characterDetails: [], error: action.error.message };
         return newState;
       });
