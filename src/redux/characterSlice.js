@@ -6,7 +6,7 @@ import axios from "axios";
 const initialState = { 
     characters: [], 
     loading: false, 
-    error: '',
+    error: null,
    };
 
    export const getAllCharacters = createAsyncThunk('characters/getAllCharacters', async (_name, thunkAPI) => {

@@ -10,7 +10,7 @@ export const getCharacter = createAsyncThunk('details/getCharacter', async (id) 
   const initialState = { 
     loading: false, 
     characterDetails: [], 
-    error: '' 
+    error: null, 
   };  
 
   const characterDetailSlice = createSlice({
