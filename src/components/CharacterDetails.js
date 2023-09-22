@@ -16,11 +16,11 @@ const CharacterDetails = () => {;
       <section className="character-container">
   <article className="character-list">
           <div className="actorCard">
-            <div className="actorImage">
+            <div className="details-img">
               {(character.imageUrl)
                   ? <img 
-                        width={228}
-                        height={343}
+                        width={235}
+                        height={350}
                         alt="Actor" src={character.imageUrl} />
                         : <p>no image available</p>}
                       <div className="title">
@@ -29,9 +29,13 @@ const CharacterDetails = () => {;
                       </div>
             </div>
             <div className="actorDesc">
-            <ul className="details-info">
+             <ul className="details-info">
                 <li className="details-item">
-                  <span className="details-name">First Name</span>
+                  <span className="details-name">Id:</span>
+                  <span className="details-response">{character.id}</span>
+                </li>
+                <li className="details-item">
+                  <span className="details-name">First Name:</span>
                   <span className="details-response">{character.firstName}</span>
                 </li>
                 <li className="details-item">
