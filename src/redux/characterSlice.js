@@ -4,12 +4,12 @@ import axios from "axios";
  const getCharactersUrl = 'https://thronesapi.com/api/v2/Characters';
 
 const initialState = { 
-    charactersData: [], 
+    characters: [], 
     loading: false, 
     error: '',
    };
 
-   export const getAllCharacters = createAsyncThunk('charactersData/getAllCharacters', async (_name, thunkAPI) => {
+   export const getAllCharacters = createAsyncThunk('characters/getAllCharacters', async (_name, thunkAPI) => {
     try {
          const response = await axios.get(`${getCharactersUrl}`,
             {
@@ -25,8 +25,8 @@ const initialState = {
               }
    });
 
-const characterSlice = createSlice({
-    name: 'charactersData',
+const charactersSlice = createSlice({
+    name: 'character',
     initialState,
     reducers: { },
     extraReducers: (builder) => {
@@ -35,14 +35,14 @@ const characterSlice = createSlice({
             return newState;
         });
         builder.addCase(getAllCharacters.fulfilled, (state, action) => {
-            const newState = { ...state, charactersData: action.payload, loading: false, error: false };
+            const newState = { ...state, characters: action.payload, loading: false, error: false };
             return newState;
         });
         builder.addCase(getAllCharacters.rejected, (state, action) => {
-           const newState = { ...state, charactersData: [], error: action.error.message };
+           const newState = { ...state, characters: [], error: action.error.message };
             return newState;
         });
     },
 });
 
-export default characterSlice.reducer;
+export default charactersSlice.reducer;

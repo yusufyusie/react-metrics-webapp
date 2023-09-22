@@ -9,22 +9,23 @@ import '../styles/spinner.css';
 
 
 const CharacterList= () => {
-    const { charactersData, loading } = useSelector((store) => store.charactersData);
     const dispatch = useDispatch();
+    const { characters, loading } = useSelector((store) => store.character);
     const [search, setSearch] = useState('');
-
-    useEffect(() => {
-        dispatch(getAllCharacters());
-      }, [dispatch]);
 
     const handleChange = (e) => {
         e.preventDefault();
         setSearch(e.target.value);
       };
 
-      const searchedActor = charactersData.filter((actor) => actor.fullName.toLowerCase()
-          .match(search.toLowerCase()) || actor.symbol.toLowerCase()
-          .match(search.toLowerCase()));
+    const searchedActor = characters.filter((item) =>
+    item.fullName.toLowerCase().startsWith(search.toLowerCase()));
+    useEffect(() => {
+      if (characters.length === 0) {
+        dispatch(getAllCharacters());
+        }
+      }, [characters.length, dispatch]);
+
 
           if (loading) {
             return (
@@ -32,6 +33,7 @@ const CharacterList= () => {
             );
           }
 
+          
     return (
     <section className="character-container">
             <img src={banner} alt="banner" />

@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import characterReducer from './characterSlice';
+import charactersReducer from './characterSlice';
 import detailReducer from './characterDetailSlice';
 import { logger } from 'redux-logger';
 
 const store = configureStore({
   reducer: {
-    charactersData: characterReducer,
+    character: charactersReducer,
     details: detailReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
