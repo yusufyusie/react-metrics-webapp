@@ -1,15 +1,12 @@
-import { React, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllCharacters } from '../redux/characterSlice'
+import { React, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import banner from '../assets/banner.png';
 import searchIcon from '../assets/find.svg';
 import '../styles/CharacterList.css';
 import '../styles/spinner.css';
 
-
 const CharacterList= () => {
-    const dispatch = useDispatch();
     const { characters, loading } = useSelector((store) => store.character);
     const [search, setSearch] = useState('');
 
@@ -20,20 +17,13 @@ const CharacterList= () => {
 
     const searchedActor = characters.filter((item) =>
     item.fullName.toLowerCase().startsWith(search.toLowerCase()));
-    useEffect(() => {
-      if (characters.length === 0) {
-        dispatch(getAllCharacters());
-        }
-      }, [characters.length, dispatch]);
-
-
+   
           if (loading) {
             return (
               <div className="loader" />
             );
           }
-
-          
+ 
     return (
     <section className="character-container">
             <img src={banner} alt="banner" />

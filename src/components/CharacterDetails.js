@@ -1,32 +1,23 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { getCharacter } from '../redux/characterDetailSlice';
 import '../styles/CharacterDetails.css';
-import '../styles/spinner.css';
+import { useSelector } from 'react-redux';
 
 
-const CharacterDetails = () => {
-    const dispatch = useDispatch();
+const CharacterDetails = () => {;
     const params = useParams();
-    const charactersData = useSelector((state) => state.details);
-    const { loading, characterDetails} = charactersData;
-  
-    useEffect(() => {
-      dispatch(getCharacter(params.id));
-    }, [dispatch, params.id]);
-  
-    if (loading) {
-      return (
-        <div className="loader" />
-      );
-    }
+    const id = params.id || 0;
+    const {characters}= useSelector((state) => state.character);
+     const character = characters.find(item =>item.id===id)
+    console.log(character);
+    console.log(params);
+    
   
     return (
       <div className="actor-details">
         <div className="hero">
-          <img src={characterDetails.imageUrl} alt="actor-icon" />
-          <h2>{characterDetails.fullName}</h2>
+          <img src={''} alt="actor-icon" />
+          <h2>fullName</h2>
         </div>
       </div>
     );
