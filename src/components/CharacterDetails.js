@@ -8,9 +8,14 @@ import '../styles/spinner.css';
 const CharacterDetails = () => {;
     const params = useParams();
     const id = params.id || 0;
-    const {characters}= useSelector((state) => state.character);
+    const {characters,loading}= useSelector((state) => state.character);
      const character = characters.find(item =>item.id==id)
     
+     if (loading) {
+      return (
+        <div className="loader" />
+      );
+    }
   
     return (
       <section className="character-container">
