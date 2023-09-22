@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getCharacter } from '../redux/characterDetailSlice';
 import '../styles/CharacterDetails.css';
+import '../styles/spinner.css';
 
 
 const CharacterDetails = () => {
     const dispatch = useDispatch();
     const params = useParams();
     const charactersData = useSelector((state) => state.details);
-    const { loading, characterDetails, error } = charactersData;
+    const { loading, characterDetails} = charactersData;
   
     useEffect(() => {
       dispatch(getCharacter(params.id));
@@ -17,12 +18,7 @@ const CharacterDetails = () => {
   
     if (loading) {
       return (
-        <p> character details are loading!</p>
-      );
-    }
-    if (error) {
-      return (
-        <p>Something is incorrect!</p>
+        <div className="loader" />
       );
     }
   

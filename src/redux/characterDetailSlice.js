@@ -1,13 +1,17 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from "axios";
 
-export const getCharacter = createAsyncThunk('details/characterDetail', async (id) => {
+export const getCharacter = createAsyncThunk('details/getCharacter', async (id) => {
     const response = await axios.get(`https://thronesapi.com/api/v2/Characters/${id}`);
     const { actor } = await response.json();
     return actor;
   });
 
-  const initialState = { loading: false, characterDetails: [], error: '' };  
+  const initialState = { 
+    loading: false, 
+    characterDetails: [], 
+    error: '' 
+  };  
 
   const characterDetailSlice = createSlice({
     name: 'details',
@@ -23,7 +27,7 @@ export const getCharacter = createAsyncThunk('details/characterDetail', async (i
         const newState = { ...state, characterDetails: action.payload, loading: false };
         return newState;
       });
-      
+
       builder.addCase(getCharacter.rejected, (state, action) => {
         const newState = { ...state, characterDetails: [], error: action.error.message };
         return newState;
