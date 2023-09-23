@@ -9,11 +9,10 @@ const CharacterDetails = () => {
   const id = params.id || 0;
   const { characters, loading } = useSelector((state) => state.character);
   const character = characters.find((item) => item.id === id);
-  
-  if(loading) {
-      return (
-        <div className="loader" />
-      );
+  if (loading) {
+   return (
+      <div className="loader" />
+     );
   }
 
   return (
@@ -22,12 +21,14 @@ const CharacterDetails = () => {
         <div className="actorCard">
         <div className="details-img">
         {(character.imageUrl)
-        ?<img 
-          width={235}
-          height={350}
-          alt="Actor" 
-          src={character.imageUrl} 
+         ? (
+          <img
+            width={228}
+            height={343}
+            alt="Actor"
+            src={character.imageUrl}
           />
+        )
         : <p>no image available</p>}
       <div className="title">
         {character.fullName}
