@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterList component test Check if the component changed 1`] = `
+<section
+  className="character-container"
+>
+  <img
+    alt="banner"
+    src="banner.png"
+  />
+  <article
+    className="search-field"
+  >
+    <img
+      alt="search icon"
+      src="find.svg"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Search Characters"
+      type="search"
+      value=""
+    />
+  </article>
+  <article
+    className="character-list"
+  />
+</section>
+`;

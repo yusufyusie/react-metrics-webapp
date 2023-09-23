@@ -55,7 +55,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo]()
+- [Live Demo](https://react-metric-webapp.onrender.com)
+
+- [Live Video](https://www.loom.com/share/7b6deb581a144c80a02c2a514a35aad2)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
