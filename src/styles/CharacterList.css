@@ -1,90 +1,90 @@
 .character-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 1rem;
-  }
-  
-  .character-container > img {
-    width: 100%;
-    height: 225px;
-  }
-  
-  .search-field {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: space-between;
-    padding: 12px 8px;
-    border-radius: 5px;
-    background-color: white;
-  }
-  
-  .search-field input {
-    font-size: 1rem;
-    border: none;
-    outline: none;
-    width: 100%;
-  }
-  
-  .search-field img {
-    width: 17px;
-    height: 17px;
-  }
-  
-  .character-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 8px;
-    margin: 1rem;
-  }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 1rem;
+}
 
-  .actorCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #2e5984;
-  }
-  
-  .actorCard:hover {
-    opacity: 0.8;
-  }
-  
-  .actorImage {
-    flex: 2;
-    height: 183px;
-    width: 275px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-start;
-    cursor: pointer;
-  }
-  
-  .actorImage img {
-    min-height: 100%;
-    width: 100%;
-  }
-  
-  .actorDesc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .actorDesc h2 {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 160px;
-    font-size: 1.05rem;
-  }
-  
-  .actorDesc p {
-    font-size: 0.8rem;
-  }
+.character-container > img {
+  width: 100%;
+  height: 225px;
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+  padding: 12px 8px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.search-field input {
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.search-field img {
+  width: 17px;
+  height: 17px;
+}
+
+.character-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 8px;
+  margin: 1rem;
+}
+
+.actorCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #2e5984;
+}
+
+.actorCard:hover {
+  opacity: 0.8;
+}
+
+.actorImage {
+  flex: 2;
+  height: 183px;
+  width: 275px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.actorImage img {
+  min-height: 100%;
+  width: 100%;
+}
+
+.actorDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.actorDesc h2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 160px;
+  font-size: 1.05rem;
+}
+
+.actorDesc p {
+  font-size: 0.8rem;
+}

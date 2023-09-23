@@ -4,14 +4,16 @@ import Header from './components/Header';
 import CharacterList from './components/CharacterList';
 import CharacterDetails from './components/CharacterDetails';
 
-const App = () => (
-  <BrowserRouter>
-    <Header />
-    <Routes>
-    <Route path="/" element={<CharacterList />} />
-    <Route path="/details/:id/" element={<CharacterDetails />} />
-    </Routes>
-  </BrowserRouter>
-);
+function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<CharacterList />} />
+        <Route path="/details/:id/" element={<CharacterDetails />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default App;

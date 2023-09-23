@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { logger } from 'redux-logger';
 import charactersReducer from './characterSlice';
 import detailReducer from './characterDetailSlice';
-import { logger } from 'redux-logger';
 
 const store = configureStore({
   reducer: {
