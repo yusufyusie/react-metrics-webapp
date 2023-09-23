@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import banner from '../assets/banner.png';
+import banner from '../assets/Banner.png';
 import searchIcon from '../assets/find.svg';
 import '../styles/CharacterList.css';
 import '../styles/spinner.css';
