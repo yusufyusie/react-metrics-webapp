@@ -17,17 +17,17 @@ const CharacterDetails = () => {
     };
 
   return (
-  <section className = "character-container">
-  <article className = "character-list">
-    <div className = "actorCard">
-      <div className = "details-img">
+   <section className="character-container">
+    <article className="character-list">
+    <div className="actorCard">
+      <div className="details-img">
         {(character.imageUrl)
           ? <img 
-              width = {235}
-              height = {350}
-              alt="Actor" src = {character.imageUrl} />
+              width={235}
+              height={350}
+              alt="Actor" sr ={character.imageUrl} />
               : <p>no image available</p>}
-              <div className = "title">
+              <div className="title">
                   {character.fullName}
                   &apos;s details
               </div>
