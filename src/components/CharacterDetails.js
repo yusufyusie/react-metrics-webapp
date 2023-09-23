@@ -10,22 +10,24 @@ const CharacterDetails = () => {
   const { characters, loading } = useSelector((state) => state.character);
   const character = characters.find((item) => item.id === id);
   
-  if (loading) {
-    return (
-      <div className="loader" />
-    );
-  }
+if (loading) {
+  return (
+    <div className="loader" />
+  );
+}
 
   return (
-   <section className="character-container">
-    <article className="character-list">
-    <div className="actorCard">
+    <section className="character-container">
+      <article className="character-list">
+      <div className="actorCard">
       <div className="details-img">
         {(character.imageUrl)
           ? <img 
               width={235}
               height={350}
-              alt="Actor" sr ={character.imageUrl} />
+              alt="Actor" 
+              src={character.imageUrl} 
+              />
               : <p>no image available</p>}
               <div className="title">
                   {character.fullName}
