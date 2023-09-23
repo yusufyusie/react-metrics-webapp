@@ -8,7 +8,6 @@ const CharacterDetails = () => {
   const params = useParams();
   const id = params.id || 0;
   const { characters, loading } = useSelector((state) => state.character);
-  // eslint-disable-next-line eqeqeq
   const character = characters.find((item) => item.id == id);
   if (loading) {
     return (
