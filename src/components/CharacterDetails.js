@@ -11,8 +11,8 @@ const CharacterDetails = () => {
   const character = characters.find((item) => item.id === id);
   if (loading) {
     return (
-   <div className="loader" />
-   );
+     <div className="loader" />
+     );
   }
 
   return (
